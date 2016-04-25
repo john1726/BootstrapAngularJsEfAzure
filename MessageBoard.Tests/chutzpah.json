@@ -1,0 +1,10 @@
+{
+    "Framework": "jasmine",
+    "References": [
+        { "Path": "../messageboard/scripts/angular.min.js" },
+        { "Path": "../messageboard/scripts/angular-mocks.js" },
+        { "Path": "../messageboard/js/myapp.js" },
+        { "Path": "../messageboard/js/home-index.js" }
+    ],
+    "Tests": [ { "Include": "*tests.js", "ExpandReferenceComments": true } ]
+}
