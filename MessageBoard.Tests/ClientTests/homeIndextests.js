@@ -7,15 +7,16 @@
 describe("home-index Tests->", function () {
 
   beforeEach(function () {
-    module("homeIndex");
+    return module("homeIndex");
   });
 
   var $httpBackend;
 
   beforeEach(inject(function ($injector) {
 
+    // Set up the mock http service responses
     $httpBackend = $injector.get("$httpBackend");
-
+    // backend definition common for all tests
     $httpBackend.when("GET", "/api/v1/topics?includeReplies=true")
       .respond([
         {

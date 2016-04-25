@@ -2,6 +2,7 @@
 var homeIndexModule = angular.module("homeIndex", ['ngRoute']);
 
 homeIndexModule.config(["$routeProvider", function ($routeProvider) {
+    //$routeProvider.allowGlobals(), // Adding this causes: Error: [$injector:modulerr] http://errors.angularjs.org/1.5.3/$injector/modulerr?p0=homeIndex&p1=undefined%20is%20not%20a%20constructor%20(evaluating%20'%24routeProvider.allowGlobals()')%0A%09at%20file%3A% ... 
   $routeProvider.when("/", {
     controller: "topicsController",
     templateUrl: "/templates/topicsView.html"
