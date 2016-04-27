@@ -138,8 +138,7 @@ homeIndexModule.factory("dataService", ["$http", "$q", function ($http, $q) {
   };
 }]);
 
-var topicsController = ["$scope", "$http", "dataService",
-  function ($scope, $http, dataService) {
+homeIndexModule.controller("topicsController", ["$scope", "$http", "dataService", function ($scope, $http, dataService) { 
     $scope.data = dataService;
     $scope.isBusy = false;
 
@@ -158,10 +157,9 @@ var topicsController = ["$scope", "$http", "dataService",
           $scope.isBusy = false;
         });
     }
-  }];
+}]);
 
-var newTopicController = ["$scope", "$http", "$window", "dataService",
-  function ($scope, $http, $window, dataService) {
+homeIndexModule.controller("newTopicController", ["$scope", "$http", "$window", "dataService", function ($scope, $http, $window, dataService) { 
     $scope.newTopic = {};
 
     $scope.save = function () {
@@ -177,10 +175,9 @@ var newTopicController = ["$scope", "$http", "$window", "dataService",
         });
 
     };
-  }];
+}]);
 
-var singleTopicController = ["$scope", "dataService", "$window", "$routeParams",
-  function ($scope, dataService, $window, $routeParams) {
+homeIndexModule.controller("singleTopicController", ["$scope", "dataService", "$window", "$routeParams", function ($scope, dataService, $window, $routeParams) { 
     $scope.topic = null;
     $scope.newReply = {};
 
@@ -205,7 +202,7 @@ var singleTopicController = ["$scope", "dataService", "$window", "$routeParams",
           alert("Could not save the new reply");
         });
     };
-  }];
+}]);
 
 
 
